@@ -40,6 +40,33 @@
  .leaflet-container{background-color:#edf2e9!important}
  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
 }
+
+/* October layout refinement: give the first page a more substantial, balanced presentation. */
+.intro-content{grid-template-columns:54% 42%;gap:4%;padding-top:17px}
+.intro-main{font-size:15px;line-height:1.48}
+.intro-main p{margin-bottom:11px}
+.intro-main h3,.intro-aside h3{font-size:20px;line-height:1.3;margin:7px 0 12px}
+.intro-main h3:not(:first-child){margin-top:19px}
+.intro-aside{padding:22px 24px;font-size:14px;line-height:1.5}
+.intro-aside p{margin-bottom:14px}
+.intro-photo{margin:18px auto 12px;text-align:center}
+.intro-photo img{display:block;margin:auto;width:auto;max-width:100%;height:252px;max-height:none;object-fit:contain;object-position:center;border-radius:4px}
+.intro-photo figcaption{text-align:left;font-size:10px;line-height:1.4;margin-top:8px}
+.intro-footer{margin-top:17px;font-size:11px}
+@media print{
+ .intro-content{display:grid!important;grid-template-columns:54% 42%!important;gap:4%!important;padding-top:12px!important}
+ .intro-main{font-size:14px!important;line-height:1.43!important}
+ .intro-main p{margin-bottom:10px!important}
+ .intro-main h3,.intro-aside h3{font-size:19px!important;line-height:1.25!important;margin:6px 0 10px!important}
+ .intro-main h3:not(:first-child){margin-top:15px!important}
+ .intro-aside{padding:18px!important;font-size:13px!important;line-height:1.42!important}
+ .intro-aside p{margin-bottom:11px!important}
+ .intro-photo{margin:14px auto 10px!important}
+ .intro-photo img{height:222px!important;max-height:none!important;width:auto!important;max-width:100%!important;object-fit:contain!important}
+ .intro-photo figcaption{font-size:9px!important;margin-top:6px!important}
+ .intro-footer{font-size:10px!important;margin-top:12px!important}
+}
+@media(max-width:900px){.intro-content{display:block}.intro-main{font-size:14px}.intro-aside{margin-top:18px}.intro-photo img{height:230px}}
 </style></head><body>
 <header><h1>Chilmark - Walking routes and rights of way</h1><button onclick="prepareAtlasPrint()">Print / Save as PDF</button></header><div id="tileWarning" style="display:none;background:#fff0da;color:#7a4000;padding:12px 20px;font-weight:bold">Some background tiles were blocked. Do not print or publish this version until the maps render correctly.</div><main>
 <section class="sheet intro-sheet">
