@@ -11,8 +11,37 @@
 .map-sheet .overview{height:151mm;width:100%}.map-title{font-size:16px;font-weight:600;color:#50696a;margin:6px 0 8px}
 @media print{.intro-content{grid-template-columns:57% 39%;gap:4%;padding-top:6px}.intro-main{font-size:11.3px;line-height:1.33}.intro-main p{margin:0 0 5px}.intro-main h3,.intro-aside h3{font-size:14px;margin:2px 0 5px}.intro-main h3:not(:first-child){margin-top:7px}.intro-aside{padding:11px;font-size:10.8px;line-height:1.36}.intro-aside p{margin-bottom:7px}.intro-photo img{max-height:145px}.intro-photo figcaption{font-size:8px}.intro-footer{font-size:9px;margin-top:6px}.map-sheet .overview{height:145mm;width:100%}.map-title{font-size:15px;color:#50696a;margin:4px 0 6px}}
 @media(max-width:900px){.intro-content{display:block}.intro-main{font-size:14px}.intro-aside{margin-top:18px}.intro-photo img{max-height:240px}.map-sheet .overview{height:500px}.map-title{color:#50696a}}
+
+/* Consistent and more visible second-level headings */
+.intro-main h3,.intro-aside h3,.side h3,.subhead,.map-title{font-size:19px;font-weight:600;line-height:1.25}
+@media screen and (min-width:901px){.intro-main h3,.intro-aside h3{font-size:19px}.intro-main{font-size:12.7px;line-height:1.35}.intro-main p{margin-bottom:7px}}
+/* A4 print pages: force desktop grids in print even when the viewport is under 900px. */
+@page{size:297mm 210mm;margin:0}
+@media print{
+ html,body,main{margin:0!important;padding:0!important;background:white!important;width:297mm!important;max-width:297mm!important;overflow:visible!important}
+ header,#tileWarning{display:none!important}
+ .sheet{display:block!important;position:relative!important;box-shadow:none!important;border:0!important;box-sizing:border-box!important;width:297mm!important;height:210mm!important;min-height:0!important;max-height:210mm!important;padding:12mm!important;margin:0!important;overflow:hidden!important;break-inside:avoid!important;page-break-inside:avoid!important;break-after:page!important;page-break-after:always!important}
+ .sheet:last-child{break-after:auto!important;page-break-after:auto!important}
+ .intro-content{display:grid!important;grid-template-columns:57% 39%!important;gap:4%!important;padding-top:6px!important}
+ .intro-main{font-size:11.3px!important;line-height:1.31!important}
+ .intro-main p{margin:0 0 5px!important}
+ .intro-main h3,.intro-aside h3{font-size:16px!important;line-height:1.22!important;margin:3px 0 5px!important}
+ .intro-aside{display:block!important;background:#f2f5f1!important;padding:10px!important;margin:0!important;font-size:10.8px!important;line-height:1.32!important}
+ .intro-aside p{margin:0 0 7px!important}
+ .intro-photo{margin:8px 0 5px!important}.intro-photo img{width:100%!important;max-height:145px!important;object-fit:contain!important}.intro-photo figcaption{font-size:8px!important}
+ .overview{width:100%!important;height:142mm!important}
+ .three{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:5mm!important}
+ .three>div{min-width:0!important}.submap{width:100%!important;height:118mm!important}
+ .layout{display:grid!important;grid-template-columns:70% 28%!important;gap:2%!important}
+ .heading{margin-bottom:7px!important}.heading h2{font-size:20px!important}
+ .subhead,.map-title{font-size:15px!important;margin:5px 0 6px!important}
+ .note{font-size:8px!important;line-height:1.22!important;margin-top:5px!important}
+ table{font-size:10px!important}td,th{padding:3px 7px!important}.key{font-size:9px!important;gap:12px!important}
+ .leaflet-container{background-color:#edf2e9!important}
+ *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+}
 </style></head><body>
-<header><h1>Chilmark - Walking routes and rights of way</h1><button onclick="window.print()">Print / Save as PDF</button></header><div id="tileWarning" style="display:none;background:#fff0da;color:#7a4000;padding:12px 20px;font-weight:bold">Some background tiles were blocked. Do not print or publish this version until the maps render correctly.</div><main>
+<header><h1>Chilmark - Walking routes and rights of way</h1><button onclick="prepareAtlasPrint()">Print / Save as PDF</button></header><div id="tileWarning" style="display:none;background:#fff0da;color:#7a4000;padding:12px 20px;font-weight:bold">Some background tiles were blocked. Do not print or publish this version until the maps render correctly.</div><main>
 <section class="sheet intro-sheet">
 <div class="heading"><h2>Chilmark - Walking routes and rights of way</h2><small>October 2026</small></div>
 <div class="intro-content">
@@ -22,7 +51,7 @@
     <p>Colours on the maps distinguish footpaths, bridleways and byways.</p>
     <h3>Map areas</h3>
     <p class="map-areas">1 · Chilmark village<br>2 · Ridge / south-western routes<br>3 · North of Chilmark and the A303</p>
-    <p><b>Parish boundary:</b> <span id="boundaryStatus">Loading official ONS boundary…</span><br><b>Interactive map:</b> <a href="https://www.google.com/maps/d/viewer?mid=1g5QVwfxb-WPbeeHUietk-ymNCSP90xA">Open the parish council map</a></p>
+    <p><b>Interactive map:</b> <a href="https://www.google.com/maps/d/viewer?mid=1g5QVwfxb-WPbeeHUietk-ymNCSP90xA">Open the parish council map</a></p>
     <h3>Before you set off</h3>
     <p><b>Footwear:</b> Wear sturdy, comfortable shoes or walking boots with good grip. Paths may be muddy, uneven or slippery, particularly after rain.</p>
     <p><b>Dogs:</b> Keep dogs under close control, use a lead around livestock and follow any local signs. Clean up after your dog and take waste home or use a bin.</p>
@@ -34,8 +63,8 @@
     <p>Chilmark and Ridge are surrounded by working farmland, woodland and beautiful Wiltshire countryside. Before setting out, check the weather and allow time for changing conditions.</p>
     <p>Use the maps on the following pages to explore the parish, then consult the route directory for individual public rights of way.</p>
     <figure class="intro-photo">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/St_Margaret_of_Antioch_Church%2C_Chilmark_-_geograph.org.uk_-_890718.jpg" alt="St Margaret of Antioch Church in Chilmark" loading="eager">
-      <figcaption><b>St Margaret of Antioch Church, Chilmark.</b> Photo: <a href="https://commons.wikimedia.org/wiki/File:St_Margaret_of_Antioch_Church,_Chilmark_-_geograph.org.uk_-_890718.jpg">Andy Gryce / Geograph</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>. Unmodified image.</figcaption>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/St_Margaret_of_Antioch%2C_Chilmark_-_geograph.org.uk_-_330849.jpg" alt="St Margaret of Antioch Church in Chilmark" loading="eager">
+      <figcaption><b>St Margaret of Antioch Church, Chilmark.</b> Photo: <a href="https://commons.wikimedia.org/wiki/File:St_Margaret_of_Antioch,_Chilmark_-_geograph.org.uk_-_330849.jpg">Maigheach-gheal / Geograph</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>. Unmodified image.</figcaption>
     </figure>
     <p class="intro-hint">This guide is provided for general information and does not replace Wiltshire Council’s legal Definitive Map and Statement.</p>
   </aside>
@@ -57,7 +86,8 @@ fetch(service+'?'+params.toString()).then(r=>{if(!r.ok)throw Error('response '+r
 let feats=(data.features||[]).filter(f=>Object.values(f.properties||{}).some(v=>typeof v==='string'&&v.trim().toLowerCase()==='chilmark'));
 if(!feats.length)throw Error('Boundary not returned');
 L.geoJSON({type:'FeatureCollection',features:feats},{style:{color:'#111',weight:2.8,fill:false}}).addTo(big);
-document.querySelector('#boundaryStatus').textContent='Official boundary loaded (black line).';
-}).catch(err=>{document.querySelector('#boundaryStatus').textContent='Boundary could not load; omitted rather than approximated. '+err.message});
+
+}).catch(err=>{console.warn('Boundary could not load:',err.message)});
+function prepareAtlasPrint(){[big,...children].forEach(m=>m.invalidateSize(true));setTimeout(()=>{[big,...children].forEach(m=>m.invalidateSize(true));window.print()},1100)}
 window.addEventListener('beforeprint',()=>{[big,...children].forEach(m=>m.invalidateSize())});setTimeout(()=>[big,...children].forEach(m=>m.invalidateSize()),1200);
 </script></body></html>
